@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>UWP学习(二)--5 Features and Implementations in YouTube | 你好</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="你好" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="../../../../index.html">你好</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>UWP学习(二)--5 Features and Implementations in YouTube</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2018-03-24</span><br />
+		
+		
+	</div>
+
+	
+
+
+	
+		<p><figure class="figure"><img src="/2018/03/24/uwp1/youtube.png" alt=""></figure></p>
+<h2 id="App-to-app"><a href="#App-to-app" class="headerlink" title="App-to-app"></a>App-to-app</h2><p>app-to-app几乎可以说在绝大多数移动应用上都存在。尤其活跃在社交软件中。</p>
+<ul>
+<li><p><strong>Share data</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/app-to-app/share-data" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/app-to-app/share-data</a></p>
+<p>​</p>
+<p>Share data包含的共享数据类型有<strong>纯文本、统一资源标识符、HTML、格式化文本、位图、文档、开发者自定义的数据</strong>。</p>
+<p>在YouTube里，当你看到一个有意思或者对别人来说可能特别重要的视频时，你可以点击分享，分享到你其他的社交软件账号上。如下图：</p>
+</li>
+</ul>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/share1.png" alt=""></figure></p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/share2.png" alt=""></figure></p>
+<p>​    这样，YouTube便可以与twitter、微信、facebook等Apps互动，实现app-to-            app的分享。</p>
+<ul>
+<li><p><strong>Copy and Paste</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/app-to-app/copy-and-paste" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/app-to-app/copy-and-paste</a></p>
+</li>
+</ul>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/paste.png" alt=""></figure><figure class="figure"><img src="/2018/03/24/uwp1/paste2.png" alt=""></figure></p>
+<p>如图。在其他应用copy的视频链接，paste到YouTube搜索框内，可直接搜到相应视频。Copy&amp;Paste间接地实现了app-to-app的信息交流。</p>
+<hr>
+<h2 id="Devices-sensors-and-power"><a href="#Devices-sensors-and-power" class="headerlink" title="Devices, sensors, and power"></a>Devices, sensors, and power</h2><ul>
+<li><p><strong>Orientation Sensor(方向传感器)</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/use-the-orientation-sensor" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/use-the-orientation-sensor</a></p>
+<p>​</p>
+<p>如果你打开了设备的方向传感器，在YouTube内播放视频时，方向传感器可以感知设备方向，进行界面的横竖自动调整。</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/censor4.png" alt=""></figure></p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="Audio-video-and-camera"><a href="#Audio-video-and-camera" class="headerlink" title="Audio video, and camera"></a>Audio video, and camera</h2><ul>
+<li><p><strong>Camera-Dispaly the camera preview</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/simple-camera-preview-access" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/simple-camera-preview-access</a></p>
+<p>​</p>
+<p>在YouTube点击了上传视频按钮时，或询问打开照相机的权限。权限正常开启后，应用会启动相机预览功能，在未开始录像之前，用户能通过相机预览到当前场景。如下图：</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/pre.png" alt=""></figure></p>
+<p>​</p>
+<p>​</p>
+</li>
+<li><p><strong>Media playback-Media items, playlists, and tracks</strong></p>
+<p>​</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource</a></p>
+<p>​</p>
+<p>YouTube是全球最大的一款视频网站。关于video相关的特性自然是最多。最基本的播放项目、列表和曲目是不可或缺的。</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/list.png" alt=""></figure></p>
+<p>同时Youtube存储海量的视频资源和用户的账户相关信息(用户列表、收藏、喜欢)，数据库的支持是必不可少的。YouTube采用的是开源数据库MySql。除此之外，我们还可以考虑使用SQLite和微软的SQL Server。</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/data-access/sqlite-databases" target="_blank" rel="noopener">SQLite相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/data-access/sqlite-databases</a></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases" target="_blank" rel="noopener">SQL Server相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases</a></p>
+<p>​</p>
+<p>​</p>
+</li>
+<li><p><strong>Media playback-Custom video effects</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/custom-video-effects" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/custom-video-effects</a></p>
+<p>​</p>
+<p>在上传自己的视频时，YouTube携带了简单的视频剪切编辑工具，还增加了视频风格自定义功能。</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/cus.png" alt=""></figure></p>
+<p>​</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/video1.png" alt=""></figure></p>
+<p>​</p>
+<p>​</p>
+</li>
+<li><p><strong>Media playback-Import media from a device</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/import-media-from-a-device" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/import-media-from-a-device</a></p>
+<p>​</p>
+<p>如图：YouTube可以扫描本地文件库，自动筛选出视频文件，支持用户从本地设备导入视频上传。</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/import.png" alt=""></figure></p>
+<p>​</p>
+</li>
+</ul>
+<hr>
+<h2 id="Networking-and-web-services"><a href="#Networking-and-web-services" class="headerlink" title="Networking and web services"></a>Networking and web services</h2><p>作为一款联网应用(且是全球的超级流量大户)，YouTube的网络及web服务无处不在。没有最多，只有更多。</p>
+<ul>
+<li><p><strong>Sockets</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/networking/sockets" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/uwp/networking/sockets</a></p>
+<p>Sockets服务无处不在。当你在搜索框搜索视频时，客户端(Client)通过传输控制协议Socket与远程的YouTube服务器端(Server)通信。期间要协定好socket类型、流量控制、端口号等基本服务。</p>
+</li>
+<li><p><strong>WebSockets</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/networking/websocketsWebSocket" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/uwp/networking/websocketsWebSocket</a></p>
+<p>与Sockets不同的是，WebSockets应用层的协议。自然在YouTube内也是无处不在。当你播放一个视频的时候，websockets服务使YouTube服务器与客户端不间断地进行视频信息传输，这项服务必不可少。</p>
+</li>
+<li><p><strong>Background transfers</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/networking/background-transfers" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/uwp/networking/background-transfers</a></p>
+<p>在Youtube下载/上传较长的视频时，可能会用到后台转移服务，使得下载/上传不中断。</p>
+</li>
+</ul>
+<hr>
+<h2 id="Launching-resuming-and-background-tasks"><a href="#Launching-resuming-and-background-tasks" class="headerlink" title="Launching, resuming, and background tasks"></a>Launching, resuming, and background tasks</h2><ul>
+<li><p><strong>Launch resume-suspend an app(挂起)</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/launch-resume/suspend-an-app" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/launch-resume/suspend-an-app</a></p>
+<p>​</p>
+</li>
+<li><p><strong>Launch resume-resume an app(恢复)</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/windows/uwp/launch-resume/resume-an-app" target="_blank" rel="noopener">相关实现文档：https://docs.microsoft.com/en-us/windows/uwp/launch-resume/resume-an-app</a></p>
+<p>当视频播放暂停，回到home。若还有正在上传或者下载视频的任务，软件会在后台继续运行。这整个过程涉及到了应用的挂起、恢复、后台运行。</p>
+<p><figure class="figure"><img src="/2018/03/24/uwp1/back.png" alt=""></figure><br>打开应用，可以从上次停止地方接着播放：<br><figure class="figure"><img src="/2018/03/24/uwp1/resume1.png" alt=""></figure></p>
+<hr>
+</li>
+</ul>
+
+	
+
+	
+		<span class="different-posts"><a href="" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+
+
+
+
+	<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDk1Ni8xMTQ5Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2018 timberswift | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

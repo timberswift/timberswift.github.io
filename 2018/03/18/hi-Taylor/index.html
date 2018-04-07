@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>UWP学习(一)--Talking about 5 Controls | 你好</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="你好" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="../../../../index.html">你好</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>UWP学习(一)--Talking about 5 Controls</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2018-03-18</span><br />
+		
+		
+	</div>
+
+	
+
+
+	
+		<h2 id="InkCanvas"><a href="#InkCanvas" class="headerlink" title="InkCanvas"></a>InkCanvas</h2><p><figure class="figure"><img src="/2018/03/18/hi-Taylor/inkcanvas1.png" alt=""></figure></p>
+<p>由于在上个学期刚使用Java开发过画板小软件，在长长的控件列表中，对我来说，此控件显得格外醒目。这是一个墨水画布控件：</p>
+<ul>
+<li>对于用户来说：该画布仅提供简单基础功能，画笔颜色仅能选择四种基础颜色！硬伤在于不能撤销画笔，也不能使用橡皮擦。想后悔吗？Clear All…高亮功能(DrawAsHighlighter)显得鸡肋，似无用武之处。</li>
+</ul>
+<ul>
+<li><p>对开发者来讲：对想开发画板的程序员，该画布基础功能的实现确是减少了开发者不少的前期工作量，但刚开始觉得该控件只是在canvas上增加了基础画板功能，并没有替他高层的特性。因此产生偏见：微软团队相比开发这样一个鸡肋的控件，不如把本来的canvas控件做强做好。</p>
+</li>
+<li><p>查阅资料后，发现inkcanvas在canvas基础上提供了接收手写笔开发的输入以及对Strokes的特定默认属性(即每次用户的输入都会变成一个Strokes对象)，这点对于画笔工具，提供了极大方便。</p>
+</li>
+</ul>
+<p>结论：高级画板工具开发者，instead of Canvas, pls choose InkCanvas.</p>
+<p>那么为什么还要存在Canvas呢？总之Canvas是InkCanvas的子集，通过对比控件文档，事实也确实如此。说白了InkCanvas就是Canvas的升级版！但微软却把它单独拎出安以富含水墨气息之雅号，创新能力足为褒奖。</p>
+<p>再次结论：为何不直接升级canvas？</p>
+<hr>
+<h2 id="PasswordBox"><a href="#PasswordBox" class="headerlink" title="PasswordBox"></a>PasswordBox</h2><p>这是一个真正令我make no sense的控件。</p>
+<p>见图：</p>
+<p><figure class="figure"><img src="/2018/03/18/hi-Taylor/pass.png" alt=""></figure></p>
+<p>该控件功能一目了然，即实现密码的密文输入。乍一看实在普通不过了。但蹊跷之处在于右端的眼睛按钮的检查提示。</p>
+<p>它使用方式是：长按提示，密码可明文显示，以检查密码是否输入正确。这种设计模式是好的，它还附带隐藏了一个很人性化功能：给不熟悉自己密码的人以明文输入。日常生活中，有人经常会记不牢自己密码，会选择明文输入自己密码。但是这个眼睛按钮必须<strong>持续按住</strong>才会明文显示输入的密码，按钮松开即变为了密文。也就是说，对于想明文输入密码的用户，必须点一下按钮输几个密码字符，再点提示按钮，再输几个密码字符，再点…</p>
+<p>好的设计理念，变为错误实践后的扭曲。若索性指定密文输入，为何还暴露密码位数？</p>
+<hr>
+<h2 id="ToggleButton"><a href="#ToggleButton" class="headerlink" title="ToggleButton"></a>ToggleButton</h2><p><figure class="figure"><img src="/2018/03/18/hi-Taylor/tb0.png" alt=""></figure>   <figure class="figure"><img src="/2018/03/18/hi-Taylor/tb1.png" alt=""></figure></p>
+<p>​                            ToggleButton</p>
+<p><figure class="figure"><img src="/2018/03/18/hi-Taylor/ts0.png" alt=""></figure>                 <figure class="figure"><img src="/2018/03/18/hi-Taylor/ts1.png" alt=""></figure></p>
+<p>​                            ToggleSwitch</p>
+<p>如图，此控件与ToggleSwitch有一摸一样的功能。换句话说，它们的唯一区别大概是在样式上了。对设计来说，后者更具有自然美学属性，如其名，像一个真正的switch。由此，toggleButton，在switch控件对比下显得相形见绌了。</p>
+<p>然而现实使用中，我又会时而不时碰到这样一个问题。旁边的状态(off/on)提醒，应该代表此时的状态，还是应该代表需要拨动开关，去达到的状态呢？加上颜色的区分，对于色盲者又不是那样友好，即使现在很多系统设有色盲模式，但那是产品外的解决方案。要彻底解决本产品的问题，要从其他角度着手。</p>
+<p><strong>solution：以形状区分</strong>。</p>
+<p><figure class="figure"><img src="/2018/03/18/hi-Taylor/tb.png" alt=""></figure></p>
+<p>如图，检索到的几种切换开关的常见样式，toggleswitch采取了最差的方案1(3，4，6，7与其相当)。这几个较差的方案都具有以上两个缺点：不清楚当前状态、以颜色区分。我觉得比较好的设计方案是5，8。因为它们加入了图形形状的区分，I/o ，√/×。很显然，这是代表当前的状态，而不是文字提示以引歧义的我需要拨动开关去达到的那个状态。其次，形状的区分对色盲用户变得友好多了。解决了控件本身的问题，而不需要麻烦别人给你设计色盲模式，欠一个人情。</p>
+<p>结论：喂，togglebutton君，比你颜值更高的toggleswitch都有缺陷了，你还有存在的必要吗？</p>
+<hr>
+<h2 id="ProgressRing"><a href="#ProgressRing" class="headerlink" title="ProgressRing"></a>ProgressRing</h2><p><figure class="figure"><img src="/2018/03/18/hi-Taylor/pr.png" alt=""></figure></p>
+<p>我觉得人类对某种心理活动是尤为敏感以至于会焦虑恐惧–没底。</p>
+<p>微软这个富有标志性的ProgressRing将人类“心里没底”这个消极心理反映得尤为具体。不过要先说的是，之所以富有标志性，其设计理念是很优美的。这种圆点旋转依次的滞后性甚能反映出加载的等待过程，不得不说微软的UI设计师脑洞还是相当了得。</p>
+<p>但是好的设计理念再一次被实践为扭曲品。</p>
+<ul>
+<li>唯一想说的一点建议就是：<strong>加上计时数字显示接口</strong>(短时加载不需要提示，不使用该接口便是)。</li>
+</ul>
+<p>理由：官方文档对该控件的解释是：ProgressRing是一个通过显示动画铃声来指示<strong>不确定进度</strong>的控件。这个设计理念很好。但也正是因为进程的不确定进度，才加深了用户内心焦虑。此控件给出了“不确定”这一形式，却没有给出“缓解不确定”这一内容。并不是所有进度加载都需要数字化显示进度，进度显示不能完全反映一个进程的执行情况。有可能一个程序加载到90%，却只花了两分钟，另一个程序加载到了20%却已经花费两小时。而以我的使用经验，微软经常把此控件使用在长时加载的进程中，比如系统更新。倘若我想知道我进行了多长时间？(经常会有自启动的程序以至于你不知它何时开始，还是比如系统更新)</p>
+<p>如果能在转圈中心加上计时器(比如转10圈，timer+1，以数字形式显示在中心)，我便对程序已加载的时间有了解，以判断决定自己下一步的操作(你不想浪费时间了，想立即停止)。倘若当你回到电脑发现计时器显示已经转了3000圈了,再是纵容这不确定的进度，我也会终止它，开始我更重要的工作。</p>
+<p>其实这样的不确定进度加上计时器就能缓解用户心理“没底”的缺陷了。真是太感谢它。</p>
+<hr>
+<h2 id="Hub"><a href="#Hub" class="headerlink" title="Hub"></a>Hub</h2><p><figure class="figure"><img src="/2018/03/18/hi-Taylor/hub.png" alt=""></figure><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">示例文档</span><br><span class="line">&lt;Hub .../&gt;</span><br><span class="line">-or-</span><br><span class="line">&lt;Hub ...&gt;</span><br><span class="line">  oneOrMoreComponents</span><br><span class="line">&lt;/Hub&gt;</span><br></pre></td></tr></table></figure></p>
+<p>我觉得一个不可或缺的控件应具备的条件是：在万千素材大集合中，选出的那些特征最小子集。比如没有能替代Button、Image、TextBox的控件。而Hub这个控件给我的感觉便是微软DIY的一个小UI，还达不到作为一个常用控件来引用的广度。使用各类控件的目的，就是增加开发人员的自定义程度，而此控件减小了可自定义的程度，把开发思路限制在这样一个既成的设计模式上。</p>
+<p>利用其他控件组合完全可以实现Hub这一控件。在功能上，也是与ScrollViewer惊人的相似。由此，它便不是一个特征最小子集。就像化学元素有限定的数量一样，我觉得优秀的控件也应有限定的数量，不应该妥协地拼凑。如果控件开发人员时怀居里夫人那种不断探索与进取的精神，去发现控件界的“镭”而不是雷，我相信UI界会更显活力与精彩。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>整体的评价角度侧重在了控件设计缺陷给用户使用体验带来的不便。以我万分有限的见识，在如今贫瘠的uwp开发平台上，我认为用户的不活跃缘由于开发者的不活跃，而开发者的不活跃根源于用户的不活跃。一个好的产品是把用户使用体验思考到了极致，成功的例子无需再引述。当然不能把不好的体验都归结在小小的控件设计上，控件只是一个缩影。但是具有小缺陷的控件设计会累积，也会折射出该平台不可见的大设计缺陷。各种缺陷模式的叠加，就会给用户带来整个产品的使用疲劳，以至于矫情的人类不再买账。</p>
+<p>再言：<strong>“若无必要，勿增实体。”</strong></p>
+<p>xaml控件的设计似乎时常在做一些没必要的加法。本能合并的控件却要分开使用，冗杂的相似又相无给很多开发者带来了疑惑。硬性增加的高度自定义冷门控件，稀有的使用记录资料，在限制开发者想象力的同时，逐渐也带来了开发疲劳。开发疲劳与使用疲劳的不良循环，析出了如今这样一个贫瘠的软件平台。</p>
+<p>由此我认为，<a href="https://baike.baidu.com/item/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80%E5%8E%9F%E7%90%86/10900565?fr=aladdin" target="_blank" rel="noopener">奥卡姆剃刀原理</a>的重要哲理性，于经济于生活，都有很强的智慧。</p>
+<hr>
+<p>ps:希望在以后进一步对各控件的学习与使用过程中，能消除我目前对以上控件的偏见。若依旧不能，大概以上均属实话。</p>
+
+	
+
+	
+		<span class="different-posts"><a href="" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+
+
+
+
+	<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDk1Ni8xMTQ5Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2018 timberswift | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
