@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>UWP_FinalProject--exReader小组开发记录(二) | 你好</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="你好" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="../../../../index.html">你好</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>UWP_FinalProject--exReader小组开发记录(二)</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2018-05-09</span><br />
+		
+		
+	</div>
+
+	
+
+
+	
+		<h1 id="exReader总开发日记"><a href="#exReader总开发日记" class="headerlink" title="exReader总开发日记"></a>exReader总开发日记</h1><ul>
+<li><a href="https://github.com/timberswift/exReader" target="_blank" rel="noopener">GitHub项目地址</a></li>
+</ul>
+<h2 id="成员commit记录"><a href="#成员commit记录" class="headerlink" title="成员commit记录"></a>成员commit记录</h2><ul>
+<li><p><strong>汤浩</strong> (<em>timberswift</em>)</p>
+<ul>
+<li><p>2018-4-17</p>
+<ul>
+<li>设计了初步UI框架（阅读器主页面、我的单词本页面、我的文章页面）</li>
+<li>合并分支</li>
+</ul>
+</li>
+<li><p>2018-4-22</p>
+<ul>
+<li>设计了单词本WordList页面UI</li>
+<li>上传了readme</li>
+</ul>
+</li>
+<li><p>2018-4-25</p>
+<ul>
+<li>新建了四个工作目录，并初写了单词本管理的WookBook类</li>
+<li>重新设计了主界面</li>
+<li>设计了文章浏览历史界面</li>
+<li>更新了四个工作区文件夹</li>
+<li>实现了生词本列表数据绑定</li>
+</ul>
+</li>
+<li><p>2018-4-27</p>
+<ul>
+<li>更新、添加了工作文件夹PassageManager、FileManager、ReaderManager;添加组员详细任务说明</li>
+<li>实现了单词本与ListView的数据绑定与单词本切换</li>
+<li>实现了单词本单词项移动与移除功能</li>
+</ul>
+</li>
+<li><p>2018-4-29</p>
+<ul>
+<li>更新各主类的成员和方法接口 </li>
+<li>实现了测试类的序列化</li>
+<li>规定了工程文件扩展名.xread (默认存储在Music目录下)</li>
+</ul>
+</li>
+<li><p>2018-05-01</p>
+<ul>
+<li>完成我的文章界面设计和相关功能</li>
+<li>更新了序列化功能</li>
+<li>更新了主界面设计</li>
+<li>调整了ListView显示</li>
+</ul>
+</li>
+<li><p>2018-05-02</p>
+<ul>
+<li>关联了提词表和生词本,实现生词导入</li>
+<li>优化了界面设计</li>
+<li>优化了各类的细节</li>
+<li>合并</li>
+</ul>
+</li>
+<li><p>2018-05-03</p>
+<ul>
+<li>增加提词模式提示</li>
+<li>实现生词本数据库存取</li>
+<li>调整了界面</li>
+<li>实现历史文章存取</li>
+<li>实现主界面信息缓存</li>
+<li>实现RichEditBox的setText功能</li>
+</ul>
+</li>
+<li><p>2018-05-04</p>
+<ul>
+<li>增加推荐界面和功能,支持关键字搜索和url</li>
+<li>调整了toolbar按钮</li>
+<li>删简了item click事件</li>
+<li>实现了提词高亮</li>
+<li>调整了界面细节</li>
+<li>实现文章数据库存取</li>
+</ul>
+</li>
+<li><p>2018-05-05</p>
+<ul>
+<li>完善软件所有基本功能</li>
+<li>更新README</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>李京懋</strong> (<em>lotsofone</em>)</p>
+<ul>
+<li><p>2018-04-18</p>
+<ul>
+<li>修改文件层次结构，消除了最外层的嵌套。</li>
+</ul>
+</li>
+<li><p>2018-04-19</p>
+<ul>
+<li>添加单词数据库的模板，暂未加入单词</li>
+</ul>
+</li>
+<li><p>2018-04-25</p>
+<ul>
+<li>修改最低版本与目标版本一致，都是Fall Creators Update，并成功安装Microsoft.Data.Sqlite</li>
+</ul>
+</li>
+<li><p>2018-04-27</p>
+<ul>
+<li>重新装了MicroSoft.Data.Sqlite</li>
+<li>将词典数据库标记为需要被build的文件，这样词典会被包含在release中</li>
+<li>成功实现对dic.db的查询操作</li>
+<li>新建了WordManage类，负责访问数据库完成业务功能。</li>
+<li>解决了另一位同学提交的合并冲突</li>
+</ul>
+</li>
+<li><p>2018-05-01</p>
+<ul>
+<li>完成使用内存数据库装载单词库并进行单词查询的代码。</li>
+<li>完成基础按词库对文本提词的功能</li>
+<li>解决另一位同学的合并冲突</li>
+</ul>
+</li>
+<li><p>2018-05-02</p>
+<ul>
+<li>修复词语重复出现不断累积的bug</li>
+<li>实现新的提词接口，采用缓存机制提高效率，并能对8种词库的并集或补集提词。</li>
+<li>完成对用户生词本的保存，并增加了新的提词模块输入接口，使生词本能便捷地载入缓存。</li>
+</ul>
+</li>
+<li>2018-05-04<ul>
+<li>更新vs，调整sqlite补丁</li>
+<li>增加了对生词背诵状态的存储，增加了删除生词的函数。文章提词部分对sql注入做简单处理。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>王云昊</strong> (<em>wong1112</em>)</p>
+<ul>
+<li><p>2018-04-26</p>
+<ul>
+<li>更新数据库lfs文件格式</li>
+<li>使用lfs存储了大于100M的单词数据库文件</li>
+</ul>
+</li>
+<li><p>2018-04-26</p>
+<ul>
+<li>添加词典数据库文件，单词种类以tag区分</li>
+<li>修改lfs路径</li>
+<li>删除原临时词典数据库文件</li>
+</ul>
+</li>
+<li><p>2018-05-03</p>
+<ul>
+<li>更换数据库，删除无用数据，压缩数据库至4.5M</li>
+<li>新增接口 SavaPassage（Passage passage）List<passage> LoadPassage（）</passage></li>
+<li>新增加设置界面setting.xaml，添加夜间模式选项和关于我们，夜间模式尚未完成，其中view和view model两个文件夹存放的是主题文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>侯平月</strong> (<em>Holystyle</em>)</p>
+<ul>
+<li><p>2018-04-27</p>
+<ul>
+<li>增加了副文本编辑器</li>
+<li>更新了阅读界面</li>
+<li>修改字体大小样式功能</li>
+</ul>
+</li>
+<li><p>2018-05-03</p>
+<ul>
+<li>更改界面元素，优化界面布局，增加输入提示</li>
+<li>增加具体按钮的功能实现，可以对文本具体操作</li>
+<li>文章显示方法的完善，修复闪退bug,完成提词高亮接口。</li>
+</ul>
+</li>
+<li><p>2018-05-04</p>
+<ul>
+<li>增加选择字体样式功能，界面调整按钮</li>
+<li>优化界面布局，更改少许默认设置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="成员commit截图"><a href="#成员commit截图" class="headerlink" title="成员commit截图"></a>成员commit截图</h2><ul>
+<li><strong>汤浩</strong> (<em>timberswift</em>)</li>
+</ul>
+<p><figure class="figure"><img src="/2018/05/09/uwp7/timberswift.png" alt=""></figure></p>
+<ul>
+<li><strong>李京懋</strong> (<em>lotsofone</em>)</li>
+</ul>
+<p><figure class="figure"><img src="/2018/05/09/uwp7/lotsofone.png" alt=""></figure></p>
+<ul>
+<li><strong>王云昊</strong> (<em>wong1112</em>)</li>
+</ul>
+<p><figure class="figure"><img src="/2018/05/09/uwp7/wong1112.png" alt=""></figure></p>
+<ul>
+<li><strong>侯平月</strong> (<em>Holystyle</em>)</li>
+</ul>
+<p><figure class="figure"><img src="/2018/05/09/uwp7/Holystyle.png" alt=""></figure></p>
+
+	
+
+	
+		<span class="different-posts"><a href="" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+
+
+
+
+	<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNDk1Ni8xMTQ5Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2018 timberswift | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273404360'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1273404360%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
